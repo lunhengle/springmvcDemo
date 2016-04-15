@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration>
+    <!--定义控制台输入格式-->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] [%-5level] %logger{50} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <!--日志级别-->
+    <root>
+        <level value="info"/>
+        <appender-ref ref="console"/>
+    </root>
+    <!--添加mybatis日志-->
+    <logger name="com.ibatis" level="DEBUG">
+        <appender-ref ref="STDOUT"/>
+    </logger>
+    <logger name="com.ibatis.common.jdbc.SimpleDataSource" level="DEBUG">
+        <appender-ref ref="STDOUT"/>
+    </logger>
+    <logger name="com.ibatis.common.jdbc.ScriptRunner" level="DEBUG">
+        <appender-ref ref="STDOUT"/>
+    </logger>
+    <logger name="com.ibatis.sqlmap.engine.impl.SqlMapClientDelegate" level="DEBUG">
+        <appender-ref ref="STDOUT"/>
+    </logger>
+    <logger name="java.sql.Connection" level="DEBUG">
+        <appender-ref ref="STDOUT"/>
+    </logger>
+    <logger name="java.sql.Statement" level="DEBUG">
+        <appender-ref ref="STDOUT"/>
+    </logger>
+    <logger name="java.sql.PreparedStatement" level="DEBUG">
+        <appender-ref ref="STDOUT"/>
+    </logger>
+</configuration>
