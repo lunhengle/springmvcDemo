@@ -20,6 +20,6 @@ public class UserDaoTest extends AbstractControllerTests {
     @Test
     public void testUserDao() {
         User user = userMapper.selectByPrimaryKey(1l);
-        logger.info(user.getName());
+        logger.info("日志输出："+user.getName());
     }
 }
