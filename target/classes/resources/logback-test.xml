@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--生产环境-->
+<!--开发环境-->
 <configuration scan="=true" scanPeriod="60" debug="false">
     <!--定义属性名供其它地方使用-->
     <property name="app_name" value="springmvcDemolog"/>
@@ -30,7 +30,7 @@
         </triggeringPolicy>
     </appender>
     <!--日志级别 trace<debug<info<warn<error<all<off-->
-    <root level="INFO">
+    <root level="DEBUG">
         <appender-ref ref="STDOUT"/>
         <appender-ref ref="FILE"/>
     </root>
@@ -40,7 +40,7 @@
     <logger name="com.ibatis.common.jdbc.ScriptRunner" level="DEBUG"/>
     <logger name="com.ibatis.sqlmap.engine.impl.SqlMapClientDelegate" level="DEBUG"/>
     <!--JdbcTemplate的日志输出器 -->
-    <logger name="org.springframework.jdbc.core.StatementCreatorUtils" additivity="false" level="TRACE"/>
+    <logger name="org.springframework.jdbc.core.StatementCreatorUtils" additivity="false" level="DEBUG"/>
     <logger name="org.springframework.jdbc.core" additivity="true" level="DEBUG"/>
     <!--java sql 日志-->
     <logger name="java.sql.Connection" additivity="true" level="DEBUG"/>
